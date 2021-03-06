@@ -3,12 +3,30 @@ import News from '../News/News';
 
 const TopHeadLine = () => {
     const [articles, setArticles] = useState([]);
+
+    function getDate() {
+        var d = new Date(),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
     
     useEffect( () => {
-        const url = 'http://newsapi.org/v2/everything?q=tesla&from=2021-02-03&sortBy=publishedAt&apiKey=22d3e301f36743539e902fd0c6ce111f';
+        const dateTime = getDate();
+        const url = `http://newsapi.org/v2/everything?q=tesla&from=${dateTime}&sortBy=publishedAt&apiKey=22d3e301f36743539e902fd0c6ce111f`;
         fetch(url)
         .then(res => res.json())
-        .then(data => setArticles(data.articles));
+        .then(data => {
+            console.log(data);
+            console.log(data.articles);
+            setArticles(data.articles)});
     }, []);
 
     return (
