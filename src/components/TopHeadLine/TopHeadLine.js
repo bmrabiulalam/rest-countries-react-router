@@ -5,7 +5,7 @@ const TopHeadLine = () => {
     const [articles, setArticles] = useState([]);
 
     function getDate() {
-        var d = new Date(),
+        let d = new Date(),
             month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
             year = d.getFullYear();
