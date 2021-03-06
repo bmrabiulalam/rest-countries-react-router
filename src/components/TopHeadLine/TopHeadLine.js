@@ -24,8 +24,6 @@ const TopHeadLine = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-            console.log(data.articles);
             setArticles(data.articles)});
     }, []);
 
