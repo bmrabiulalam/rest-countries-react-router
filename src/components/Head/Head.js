@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 const Head = () => {
     return (
-        <div style={{background: 'lightgray', lineHeight: '60px', textDecoration: 'none', fontSize: '30px', fontWeight: 600}}>
+        <div style={{backgroundColor: 'tomato', padding: '20px', marginBottom: '15px', fontSize: '30px', fontWeight: 700}}>
             <nav>
-                <ul style={{listStyle: 'none'}}>
-                    <Link to="/home"><li>Home</li></Link>
+                <ul style={{textDecoration: 'none', listStyle: 'none', color: 'white'}}>
+                    <Link to='/home'><li style={{color: 'white'}}>Home</li></Link>
                 </ul>
             </nav>
         </div>
