@@ -13,7 +13,7 @@ const Country = (props) => {
             setCountry(data[0]);
             setCountryLoaded(true);
         });
-    }, []);
+    }, [countryName]);
 
     const {
         name, 
